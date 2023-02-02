@@ -2,20 +2,26 @@
   "name": "apollo-server",
   "version": "0.0.1",
   "description": "Sample Apollo Server",
-  "main": "src/index.js",
+  "main": "./dist/index.js",
   "repository": "git@github.com:prawana-perera/node-js-gql-sports.git",
   "author": "Prawana Perera <prawana.perera@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "apollo-datasource-rest": "^0.10.0",
-    "apollo-server-express": "^2.20.0",
+    "@apollo/datasource-rest": "^5.0.1",
+    "@apollo/server": "^4.3.2",
     "dotenv": "^16.0.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "graphql": "^16.6.0"
   },
   "scripts": {
-    "start": "nodemon src/index.js"
+    "compile": "tsc",
+    "start": "yarn compile & node ./dist/index.js",
+    "start:dev": "ts-node-dev --respawn -- src/index.ts"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@types/node": "^18.11.18",
+    "nodemon": "^2.0.20",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.5"
   }
 }
